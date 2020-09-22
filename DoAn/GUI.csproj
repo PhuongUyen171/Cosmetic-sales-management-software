@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6178900A-EE08-4602-8EE0-3737B1E64ED8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DoAn</RootNamespace>
+    <AssemblyName>DoAn</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLL">
+      <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="BLL_DAL">
+      <HintPath>..\BLL_DAL\bin\Debug\BLL_DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.BonusSkins.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Charts.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.CodeParser.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Data.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.DataAccess.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.DataAccess.v19.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Diagram.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Images.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Office.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Pdf.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.PivotGrid.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Printing.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.RichEdit.v19.2.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Utils.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Utils.v19.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.Xpo.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraBars.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraCharts.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.Extensions, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraCharts.v19.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraCharts.v19.2.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraDiagram.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraEditors.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraGauges.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraLayout.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraNavBar.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraPivotGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraPrinting.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraReports.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraReports.v19.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraRichEdit.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraTreeList.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DXApplication1\Report\bin\Debug\DevExpress.XtraVerticalGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=15.4451.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NguyenThiPhuongUyen_2001170230_buoi8\GUI\bin\Debug\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base, Version=15.4450.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NguyenThiPhuongUyen_2001170230_buoi8\GUI\bin\Debug\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=15.4450.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NguyenThiPhuongUyen_2001170230_buoi8\GUI\bin\Debug\Syncfusion.XlsIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThietKeControl">
+      <HintPath>..\ThietKeControl\bin\Debug\ThietKeControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChucVu.cs" />
+    <Compile Include="ExcelExport\Constants.cs" />
+    <Compile Include="ExcelExport\ExcelExport.cs" />
+    <Compile Include="ExcelExport\FileCommon.cs" />
+    <Compile Include="frmCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCauHinh.Designer.cs">
+      <DependentUpon>frmCauHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChiTietQuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietQuy.Designer.cs">
+      <DependentUpon>frmChiTietQuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChucVu.Designer.cs">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachHoaDon.Designer.cs">
+      <DependentUpon>frmDanhSachHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGioiThieu.Designer.cs">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhomHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhomHangHoa.Designer.cs">
+      <DependentUpon>frmNhomHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhomKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhomKhachHang.Designer.cs">
+      <DependentUpon>frmNhomKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoiDungThuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNoiDungThuChi.Designer.cs">
+      <DependentUpon>frmNoiDungThuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuKiemKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuKiemKho.Designer.cs">
+      <DependentUpon>frmPhieuKiemKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuNhap.Designer.cs">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuThuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuThuChi.Designer.cs">
+      <DependentUpon>frmPhieuThuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhucHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhucHoi.Designer.cs">
+      <DependentUpon>frmPhucHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSanPham.Designer.cs">
+      <DependentUpon>frmSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaoLuu.Designer.cs">
+      <DependentUpon>frmSaoLuu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinSD.Designer.cs">
+      <DependentUpon>frmThongTinSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimKiem.Designer.cs">
+      <DependentUpon>frmTimKiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DanhSachTraHangBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DanhSachTraHangBan.Designer.cs">
+      <DependentUpon>frm_DanhSachTraHangBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginResult.cs" />
+    <Compile Include="NguoiDung.cs" />
+    <Compile Include="NhomKhachHang.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptHoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptHoaDon.Designer.cs">
+      <DependentUpon>rptHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptMaVach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptMaVach.Designer.cs">
+      <DependentUpon>rptMaVach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptTheKH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptTheKH.Designer.cs">
+      <DependentUpon>rptTheKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptThongKeBanHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptThongKeBanHang.Designer.cs">
+      <DependentUpon>rptThongKeBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptThongKeTraHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptThongKeTraHang.Designer.cs">
+      <DependentUpon>rptThongKeTraHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WordExport\Global.cs" />
+    <Compile Include="WordExport\WordExport.cs" />
+    <EmbeddedResource Include="frmCauHinh.resx">
+      <DependentUpon>frmCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietQuy.resx">
+      <DependentUpon>frmChiTietQuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChucVu.resx">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachHoaDon.resx">
+      <DependentUpon>frmDanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGioiThieu.resx">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhomHangHoa.resx">
+      <DependentUpon>frmNhomHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhomKhachHang.resx">
+      <DependentUpon>frmNhomKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoiDungThuChi.resx">
+      <DependentUpon>frmNoiDungThuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuKiemKho.resx">
+      <DependentUpon>frmPhieuKiemKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuNhap.resx">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuThuChi.resx">
+      <DependentUpon>frmPhieuThuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhucHoi.resx">
+      <DependentUpon>frmPhucHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSanPham.resx">
+      <DependentUpon>frmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaoLuu.resx">
+      <DependentUpon>frmSaoLuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinSD.resx">
+      <DependentUpon>frmThongTinSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimKiem.resx">
+      <DependentUpon>frmTimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DanhSachTraHangBan.resx">
+      <DependentUpon>frm_DanhSachTraHangBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="rptHoaDon.resx">
+      <DependentUpon>rptHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptMaVach.resx">
+      <DependentUpon>rptMaVach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptTheKH.resx">
+      <DependentUpon>rptTheKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThongKeBanHang.resx">
+      <DependentUpon>rptThongKeBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThongKeTraHang.resx">
+      <DependentUpon>rptThongKeTraHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\BLL_DAL.QLShopDataContext.datasource" />
+    <None Include="Properties\DataSources\DAL.dsShopMP.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Bột Than Hoạt Tính Đánh Trắng Răng Teeth Whitening.jpg" />
+    <Content Include="Resource\Cám Gạo Trà Xanh.jpg" />
+    <Content Include="Resource\Dưỡng Mắt 3W Clinic Collagen Lifting Eye Cream 35ml.jpg" />
+    <Content Include="Resource\Dưỡng Trắng Innisfree Jeju Cherry Blossom Tone-Up Cream.jpg" />
+    <Content Include="Resource\Dầu Gội Cho Tóc Nhuộm TRESemmé Color Radiance 250ml.jpg" />
+    <Content Include="Resource\Dầu Gội Tóc Thường Dưỡng Sinh Gia Truyền Hương Như 500ml.jpg" />
+    <Content Include="Resource\Dầu Gội Xả Head Shoulder 2 In 1 Dry Scalp Care 950ml.jpg" />
+    <Content Include="Resource\Dầu Xả Biotin &amp; Collagen Thickening 400ml.jpg" />
+    <Content Include="Resource\Gel Rửa Tay Bath Body Works Japanese Cherry Blossom.jpg" />
+    <Content Include="Resource\Gel Rửa Tay Khô Bath Body Works Honolulu Sun 29ml.jpg" />
+    <Content Include="Resource\Hộp Quà Hình Vuông Lớn.jpg" />
+    <Content Include="Resource\Kem Dưỡng Da Tay Mamonde Flower Scented 50ml.jpg" />
+    <Content Include="Resource\Kem Dưỡng Mắt Clinique All About Eyes 7ml.jpg" />
+    <Content Include="Resource\Kem Dưỡng Mắt Innisfree Green Tea Seed Eye Cream 30ml.jpg" />
+    <Content Include="Resource\Kem Lót Sugao Snow Whipped Cream SPF 23.jpg" />
+    <Content Include="Resource\Kem Mắt AHC Ageless Real Eye Cream For Face 30ml.jpg" />
+    <Content Include="Resource\Kem Nền Innisfree My Foundation 30ml.jpg" />
+    <Content Include="Resource\Kem Đánh Răng Baking Soda Toothpaste 220g.jpg" />
+    <Content Include="Resource\Kem Đánh Răng Colgate Sensitive Whitening 170g.jpg" />
+    <Content Include="Resource\Kem Đánh Răng Crest 3D White Radiant Mint 99gr.jpg" />
+    <Content Include="Resource\Khay Đựng Mỹ Phẩm BNBS.jpg" />
+    <Content Include="Resource\Khay Đựng Son 12 Ô Mica Trong Suốt.jpg" />
+    <Content Include="Resource\Miếng Lột Mụn Đầu Đen Innisfree Jeju Volcanic Nose Pack.jpg" />
+    <Content Include="Resource\Muối Tắm A Bonné Snaily Yogurt 350gr.jpg" />
+    <Content Include="Resource\Muối Tắm Sữa Tẩy Tế Bào Chết A Bonné Spa Milk Salt.jpg" />
+    <Content Include="Resource\Máy Làm Trắng Răng Crest 3D White Light.jpg" />
+    <Content Include="Resource\Nước Hoa Dạng Lăn Victoria Secret Crush EDP 7ml.jpg" />
+    <Content Include="Resource\Nước Hoa Hồng Innisfree Broccoli Clearing Toner.jpg" />
+    <Content Include="Resource\Nước Hoa Nam Gatsby Secret Style 60ml.jpg" />
+    <Content Include="Resource\Nước Hoa Nữ Bvlgari Rose Goldea EDP.jpg" />
+    <Content Include="Resource\Nước Hoa Nữ Christian Dior Miss Dior Eau De Parfum.jpg" />
+    <Content Include="Resource\Nước Hoa Nữ Versace Bright Crystal Absolu EDP 50ml.jpg" />
+    <Content Include="Resource\Nước Tẩy Sơn Móng Etude House Nail Remover 100ml.jpg" />
+    <Content Include="Resource\Nến Thơm Bath &amp; Body Works Cinnamon Caramel Swirl 411gr.jpg" />
+    <Content Include="Resource\Phấn Nước Innisfree Water Fit Cushion SPF 34 14g.jpg" />
+    <Content Include="Resource\Phấn Phủ Dạng Bột Innisfree No Sebum Moisture Powder 5g.jpg" />
+    <Content Include="Resource\Rửa Tay Khô Bath &amp; Body Works Twisted Peppermint 29ml.jpg" />
+    <Content Include="Resource\Serum Dưỡng Mi Maybelline Lash Sensational 5.3ml.jpg" />
+    <Content Include="Resource\Son Kem Dưỡng Dior Lip Maximizer 012 6ml.jpg" />
+    <Content Include="Resource\Son Kem Lì 3CE Cloud Velvet Tint Beige Avenue.jpg" />
+    <Content Include="Resource\Son Kem TOI Marshmallow Velvet Tint M Series.jpg" />
+    <Content Include="Resource\Son Lì Make Up For Ever Artist Liquid Matte.jpg" />
+    <Content Include="Resource\Son Lì Mamonde True Color Lipstick 3.5g.jpg" />
+    <Content Include="Resource\Sáp Dưỡng Da Vaseline Blue Seal Vitamin E 50ml.jpg" />
+    <Content Include="Resource\Tinh Chất The Body Shop Tea Tree.jpg" />
+    <Content Include="Resource\Tạo Khối Rimmel Natural Bronzer 022 Sun Bronze.jpg" />
+    <Content Include="Resource\Tẩy Tế Bào Chết Body Scentio Riceberry Cream 200gr.jpg" />
+    <Content Include="Resource\Tẩy Tế Bào Chết ESI Bio SkinCare Face &amp; Body Strawberry 250ml.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{163688E2-6F6B-4C2F-8598-BE0674B46284}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>99</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
